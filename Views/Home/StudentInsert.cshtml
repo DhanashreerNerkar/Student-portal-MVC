@@ -1,0 +1,51 @@
+﻿
+@{
+    ViewBag.Title = "StudentInsert";
+}
+<!DOCTYPE html>
+<h2>Student Management</h2>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device=width" />
+    <title>Create Student</title>
+    <link href="~/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+    <div>
+        <form method="post">
+            <div class="form-group">
+                <label class="col-sm-3 control-label no-padding-right">Name</label>
+                <div class="col-sm-9">
+                    <input type="text" name="Name" class="col-xs-10 col-sm-8" required/>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-3 control-label no-padding-right">Date Of Birth</label>
+                <div class="col-sm-9">
+                    <input type="date" value="@DateTime.Now.Date" name="DateOfBirth" max="@DateTime.Now" class="col-xs-10 col-sm-8" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-3 control-label no-padding-right">Gender</label>
+                <div class="col-sm-9">
+                    <select id="Gender" name="Gender" class="col-xs-10 col-sm-8" required>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                        <option value="Others">Others</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-9">
+                    <input type="submit" value="Submit" class="btn btn-primary" />
+                </div>
+            </div>
+        </form>
+    </div>
+    @*@if (TempData["msg"]!=null)
+    {
+        <script>alert('@TempData["msg"]')</script>
+    }*@
+</body>
+</html>

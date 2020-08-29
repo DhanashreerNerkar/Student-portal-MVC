@@ -1,0 +1,44 @@
+﻿
+@{
+    ViewBag.Title = "StudentCourseUpdate";
+}
+
+<h2>Student Course Update</h2>
+
+
+<html>
+<head>
+    <meta name="viewport" content="width=device=width" />
+    <title>Create Student</title>
+    <link href="~/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+    <div>
+        <form method="post">
+            <div class="form-group">
+                <label class="col-sm-3 control-label no-padding-right">Student Name</label>
+                <div class="col-sm-9">
+                    @Html.DropDownList("StudentId", new SelectList(ViewBag.DDL_stu, "StudentId", "Name"), "Please select", new { @id = "ddlStudent" })
+                    @Html.Hidden("Name", null, new { @id = "hfStudentName" })
+                    <text> Only Students Having Age > 8 Can Enroll For Cources </text>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-3 control-label no-padding-right">Course</label>
+                <div class="col-sm-9">
+                    @Html.DropDownList("CourseId", new SelectList(ViewBag.DDL_crs, "CourseId", "Course"), "Please select", new { @id = "ddlcourse" })
+                    @Html.Hidden("Course", null, new { @id = "hfCourse" })
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-9">
+                    <input type="submit" value="Update" class="btn btn-primary" />
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
+
+
+
